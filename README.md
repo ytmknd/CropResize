@@ -25,11 +25,9 @@ Unsupported browser languages fall back to English.
 
 ## Usage
 
-Open `index.html` in a browser:
+Run Crop Resize in a browser:
 
-```text
-D:\CropResize\index.html
-```
+https://ytmknd.github.io/CropResize/
 
 Then drop, paste, or select an image. Adjust the crop area and output resolution, then use **Copy** or **Download**.
 
