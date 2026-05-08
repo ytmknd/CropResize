@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="appTitle">Crop Resize</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <div id="dropZone" class="drop-zone" tabindex="0">
+          <canvas id="editorCanvas" data-i18n-attr="aria-label:canvasLabel" aria-label="Image editor canvas"></canvas>
+          <div id="emptyState" class="empty-state">
+            <div class="upload-mark">+</div>
+            <h1 data-i18n="dropTitle">Drop an image</h1>
+            <p data-i18n="dropHint">You can also click to choose a file</p>
+          </div>
+          <input id="fileInput" class="file-input" type="file" accept="image/*" />
+        </div>
+      </section>
+
+      <aside class="sidebar" data-i18n-attr="aria-label:settingsLabel" aria-label="Edit settings">
+        <div class="panel-heading">
+          <h2>Crop Resize</h2>
+          <p id="imageMeta" data-i18n="noImage">No image selected</p>
+        </div>
+
+        <div class="control-group">
+          <label for="scaleRange" data-i18n="resolution">Resolution</label>
+          <div class="range-row">
+            <input id="scaleRange" type="range" min="10" max="100" value="100" step="1" disabled />
+            <output id="scaleValue" for="scaleRange">100%</output>
+          </div>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            <span data-i18n="width">Width</span>
+            <input id="widthInput" type="number" min="1" step="1" disabled />
+          </label>
+          <label>
+            <span data-i18n="height">Height</span>
+            <input id="heightInput" type="number" min="1" step="1" disabled />
+          </label>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            <span data-i18n="format">Format</span>
+            <select id="formatSelect" disabled>
+              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/webp">WebP</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="quality">Quality</span>
+            <input id="qualityInput" type="number" min="1" max="100" value="92" disabled />
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="resetButton" type="button" data-i18n="reset" disabled>Reset</button>
+          <button id="copyButton" type="button" data-i18n="copy" disabled>Copy</button>
+          <button id="downloadButton" type="button" class="primary" data-i18n="download" disabled>Download</button>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
